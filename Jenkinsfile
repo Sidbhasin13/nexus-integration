@@ -13,7 +13,7 @@ pipeline {
       }
       steps{
           sh(script: """
-              curl -X GET -v -u "admin:admin" http://localhost:8011/service/rest/v1/repositories -H 'Content-Type: application/json'
+              curl -X GET -v -u "admin:3b6b9f2d-a1de-3518-9d33-74ccc3fddfa0" http://localhost:8011/service/rest/v1/repositories -H 'Content-Type: application/json'
             """ 
         )
       }
