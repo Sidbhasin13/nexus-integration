@@ -4,7 +4,7 @@ pipeline {
     BRANCH = "${BRANCH_NAME}"
     USERNAME = 'admin'
     PASSWORD = 'admin'
-    NEXUS_URL = '192.168.1.11:8011'
+    NEXUS_URL = ' 172.26.64.1:8011'
   }
   stages {
     stage('Build') {
