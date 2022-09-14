@@ -3,7 +3,7 @@ pipeline {
   environment {
     BRANCH = "${BRANCH_NAME}"
     USERNAME = 'admin'
-    PASSWORD = 'Sidbhasin786'
+    PASSWORD = 'admin'
     NEXUS_URL = 'localhost:8011'
   }
   stages {
