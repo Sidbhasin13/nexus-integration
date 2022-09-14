@@ -13,7 +13,7 @@ pipeline {
       }
       steps{
           sh(script: """
-              curl -X GET -v -u "admin:3b6b9f2d-a1de-3518-9d33-74ccc3fddfa0" http://localhost:8011/service/rest/v1/repositories -H 'Content-Type: application/json'
+              curl -v -u admin:admin -X 'GET' 'http://localhost:8011/service/rest/v1/repositories' -H 'accept: application/json' -H 'NX-ANTI-CSRF-TOKEN: 0.6224239150234645'
             """ 
         )
       }
