@@ -4,7 +4,7 @@ pipeline {
     BRANCH = "${BRANCH_NAME}"
     USERNAME = 'admin'
     PASSWORD = 'admin'
-//     NEXUS_URL = '::1:8011'
+    NEXUS_URL = 'localhost:8011'
   }
   stages {
     stage('Build') {
@@ -13,7 +13,7 @@ pipeline {
       }
       steps{
           sh(script: """
-              curl -v -u admin:admin -X GET http://[::1]:8011/service/rest/v1/repositories -H 'Content-Type: application/json'
+              curl -X GET http://${USERNAME}:${PASSWORD}@{NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json'
             """ 
         )
       }
