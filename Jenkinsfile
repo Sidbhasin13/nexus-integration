@@ -13,13 +13,7 @@ pipeline {
       }
       steps{
           sh(script: """
-              http_response="curl -X GET -s -o response.txt -w "%{http_code}" http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json' --stderr -"
-              if [ $http_response != "200" ]; then
-                  # handle error
-              else
-                  echo "Server returned:"
-                  cat response.txt    
-              fi
+              curl -X GET -o -I -L -s -w "%{http_code}" http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json'
             """ 
         )
       }
