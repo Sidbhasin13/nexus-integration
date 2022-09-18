@@ -13,8 +13,8 @@ pipeline {
       }
       steps{
           sh(script: """
-              ABC="curl -s -o response.txt -w "%{http_code}" -X GET http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json' --stderr -"
-              if [ ${ABC} != "200" ]; then
+              abc="curl -s -o response.txt -w "%{http_code}" -X GET http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json' --stderr -"
+              if [ ${abc} != "200" ]; then
                   # handle error
               else
                   echo "Server returned:"
