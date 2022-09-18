@@ -13,7 +13,7 @@ pipeline {
       }
       steps{
           sh(script: """
-              a="curl -v -X GET http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json' --stderr -"
+              a="curl -o - -I -X GET http://${USERNAME}:${PASSWORD}@${NEXUS_URL}/service/rest/v1/repositories -H 'Content-Type: application/json' --stderr -"
               echo "a"
             """ 
         )
